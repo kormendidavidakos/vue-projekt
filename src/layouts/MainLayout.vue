@@ -1,121 +1,14 @@
-<script setup lang="ts">
-import { ref } from "vue";
-
-let showMenuBar = ref(true);
-let showLeftDrawer = ref(false);
-let showRightDrawer = ref(false);
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <q-layout view="hHh LpR fFf">
     <!-- Fejléc -->
-    <q-header v-model="showMenuBar" class="bg-primary text-white" elevated>
+    <q-header class="bg-blue-5 text-white" elevated>
       <q-toolbar>
-        <q-toolbar-title>
-          Dolgozat minta
-        </q-toolbar-title>
-
-        <q-tabs v-if="$q.screen.gt.sm" inline-label shrink>
-          <q-route-tab label="Home" no-caps to="/" />
-        </q-tabs>
+        <q-toolbar-title shrink style="cursor: pointer" title> Dolgozat minta </q-toolbar-title>
+        <q-btn class="active" flat label="Home" no-caps to="/"> </q-btn>
       </q-toolbar>
     </q-header>
-
-    <!-- Oldalsáv a bal oldalon -->
-    <q-drawer v-model="showLeftDrawer" elevated side="left" :width="150">
-      <q-tabs inline-label vertical>
-        <q-banner class="bg-secondary text-white">{{ $t("menu") }}</q-banner>
-        <q-route-tab
-          :class="{ active: $route.path === '/' }"
-          icon="mdi-home"
-          label="Home"
-          no-caps
-          to="/"
-        />
-        <q-route-tab
-          :class="{ active: $route.path === '/empty' }"
-          icon="mdi-page-layout-body"
-          label="Empty"
-          no-caps
-          to="/empty"
-        />
-        <q-route-tab
-            :class="{ active: $route.path === '/basic' }"
-            icon="mdi-school-outline"
-            label="Basic"
-            no-caps
-            to="/basic"
-          />
-          <q-route-tab
-            :class="{ active: $route.path === '/table' }"
-            icon="mdi-table"
-            label="qTable"
-            no-caps
-            to="/table"
-          />
-      </q-tabs>
-    </q-drawer>
-
-    <!-- Oldalsáv a jobb oldalon -->
-    <q-drawer v-model="showRightDrawer" elevated side="right" :width="150">
-      <q-tabs inline-label vertical>
-        <q-banner class="bg-secondary text-white">{{ $t("links") }}</q-banner>
-        <q-route-tab
-          href="https://quasar.dev/"
-          label="Quasar Dev"
-          no-caps
-          target="_blank"
-        />
-        <q-route-tab
-          href="https://vuejs.org/"
-          label="Vue.JS"
-          no-caps
-          target="_blank"
-        />
-        <q-route-tab
-          href="https://router.vuejs.org/"
-          label="Vue Router"
-          no-caps
-          target="_blank"
-        />
-        <q-route-tab
-          href="https://www.typescriptlang.org/"
-          label="TypeScript"
-          no-caps
-          target="_blank"
-        />
-        <q-route-tab
-          href="https://pinia.vuejs.org/"
-          label="Pinia"
-          no-caps
-          target="_blank"
-        />
-        <q-route-tab
-          href="https://pictogrammers.com/library/mdi/"
-          label="MDI Icons"
-          no-caps
-          target="_blank"
-        />
-        <q-route-tab
-          href="https://mui.com/material-ui/material-icons/"
-          label="Material Icons"
-          no-caps
-          target="_blank"
-        />
-        <q-route-tab
-          href="https://eslint.org/"
-          label="ESLint"
-          no-caps
-          target="_blank"
-        />
-        <q-route-tab
-          href="https://github.com/typicode/json-server"
-          label="JSON Server"
-          no-caps
-          target="_blank"
-        /> </q-tabs
-    ></q-drawer>
 
     <!-- A router ide (router-view) tölti be az oldalt -->
     <q-page-container>
@@ -126,6 +19,7 @@ let showRightDrawer = ref(false);
 
 <style lang="scss">
 .active {
-  background-color: #dddddd;
+  background-color: #44a5f1;
+  color: #ff0;
 }
 </style>
