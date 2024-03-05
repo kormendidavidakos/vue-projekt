@@ -4,7 +4,6 @@ import { ref } from "vue";
 let showMenuBar = ref(true);
 let showLeftDrawer = ref(false);
 let showRightDrawer = ref(false);
-let showStatusBar = ref(true);
 
 </script>
 
@@ -117,20 +116,6 @@ let showStatusBar = ref(true);
           target="_blank"
         /> </q-tabs
     ></q-drawer>
-
-    <!-- Lábléc (állapot sor) -->
-    <q-footer v-model="showStatusBar" class="bg-jedlikred text-white" elevated>
-      <q-toolbar>
-        <q-toolbar-title v-if="$q.screen.gt.sm" class="text-center"
-          >Jedlik Vue3 {{ $t("template") }}, with TS {{ $t("and") }} Quasar v{{
-            $q.version
-          }}</q-toolbar-title
-        >
-        <q-toolbar-title v-else class="text-center"
-          >Jedlik Vue3 {{ $t("template") }}</q-toolbar-title
-        >
-      </q-toolbar>
-    </q-footer>
 
     <!-- A router ide (router-view) tölti be az oldalt -->
     <q-page-container>

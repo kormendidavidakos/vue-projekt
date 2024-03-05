@@ -15,9 +15,7 @@
 
 <template>
   <q-page class="q-pa-xl">
-    <h1>árvíztűrőtükörfúrógép</h1>
-    <h1>ÁRVÍZTŰRŐTÜKÖRFÚRÓGÉP</h1>
-    <q-btn class="q-px-xs-sm" color="primary" glossy icon="mdi-mail" label="OK" no-caps stack to="/" />
+    
   </q-page>
 </template>
 
