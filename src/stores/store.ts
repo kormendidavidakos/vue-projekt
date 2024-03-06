@@ -26,14 +26,20 @@ export interface IOne {
 }
 
 export interface IMany {
-  id?: number; // PK
-  categoryId?: number; // FK
-  titleField?: string;
-  descField?: string;
-  dateField?: string;
-  boolField?: boolean;
-  priceField?: number;
-  imgField?: string;
+  _id?: number; // PK
+  kategoria_id?: number; // FK
+  cim?: string;
+  evjarat?: string;
+  km_allas?: number;
+  szin?: string;
+  uzemanyag?: string;
+  hengerurtartalom?: number;
+  teljesitmeny?: number;
+  serulesmentes?: boolean;
+  leiras?: string;
+  hirdetes_datum?: string;
+  vetelar?: number;
+  kepek?: string;
   category?: IOne;
 }
 
