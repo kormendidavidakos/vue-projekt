@@ -8,13 +8,28 @@
       </q-card-section>
 
       <q-card-section class="q-pt-none">
-        {{ lorem }}
+        {{ documents }}
       </q-card-section>
     </q-card>
 </template>
 
-<script setup>
+<script>
+    import { useStore } from "src/stores/store";
+    const store = useStore();
+    await store.one_GetAll(getOneDocuments);
+    export default {
+        props: ["index"],
+        setup(props){
+            // const id = store.many.documents
+            console.log(props)
+        }
+    }
 
+    let documents = 0
+    documents
+    function getOneDocuments(){
+        documents = store.one.documents
+    }
 </script>
 
 <style lang="scss" scoped>

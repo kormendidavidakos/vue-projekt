@@ -100,15 +100,17 @@ export const useStore = defineStore({
   }),
   getters: {},
   actions: {
-    async one_GetAll(): Promise<void> {
+    async one_GetAll(callback: any): Promise<void> {
       Loading.show();
       this.one.documents = [];
+
       api
         .get("api/kategoriak")
         .then((res) => {
           Loading.hide();
           if (res?.data) {
             this.one.documents = res.data;
+            callback()
           }
         })
         .catch((error) => {
@@ -120,7 +122,7 @@ export const useStore = defineStore({
       Loading.show();
       this.many.documents = [];
       api
-        .get("api/advertisements")
+        .get("api/hirdetesek")
         .then((res) => {
           Loading.hide();
           if (res?.data) {

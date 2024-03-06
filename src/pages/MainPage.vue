@@ -16,8 +16,9 @@ import carComponent from "../components/CarComponent.vue";
 
 <template>
   <q-page class="q-pa-xl">
-    <carComponent></carComponent>
+    <carComponent index="1"></carComponent>
   </q-page>
+  
 </template>
 
 <style lang="scss" scoped></style>
