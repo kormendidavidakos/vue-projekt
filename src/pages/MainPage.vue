@@ -4,6 +4,7 @@
 // import { onMounted } from "vue";
 // import { date } from "quasar";
 // import router from "src/router";
+// import CardComponent from "src/components/CardComponent.vue"
 
 // const store = useStore();
 
@@ -15,7 +16,7 @@
 
 <template>
   <q-page class="q-pa-xl">
-    
+    <!-- <CardComponent></CardComponent> -->
   </q-page>
 </template>
 
