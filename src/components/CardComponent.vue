@@ -1,87 +1,29 @@
 <script>
-import { useStore } from "src/stores/store";
-import { ref } from "vue";
-const store = useStore();
-export default {
-  props: ["index"],
-  setup(props) {
-    const id = ref(store.other.documents[props.index]._id);
-    const cim = ref(store.other.documents[props.index].cim);
-    const displayText = ref(store.other.documents[props.index].leiras);
-    const szin = ref(store.other.documents[props.index].szin);
-    const evjarat = ref(store.other.documents[props.index].evjarat);
-    const hengerurtartalom = ref(store.other.documents[props.index].hengerurtartalom);
-    const hirdetes_datum = ref(store.other.documents[props.index].hirdetes_datum);
-    const kepek = ref(store.other.documents[props.index].kepek);
-    // console.log(kepek.value);
-    const slicedText = ref("");
-    const toggled = ref(false);
-    const handleToggle = (toggled) => {
-      if (displayText.value.length <= 100) {
-        slicedText.value = displayText.value;
-        return;
-      }
-      if (!toggled) {
-        let lastWhiteSpaceIdx = -1;
-        for (let index = 0; index < 100; index++) {
-          slicedText.value += displayText.value[index];
-          if (displayText.value[index] == " ") {
-            lastWhiteSpaceIdx = index;
-          }
-        }
-        if (slicedText.value[99] == " ") {
-          slicedText.value = slicedText.value.slice(0, 98) + "...";
-        } else {
-          slicedText.value = slicedText.value.slice(0, lastWhiteSpaceIdx) + "...";
-        }
-      } else {
-        slicedText.value = displayText.value;
-      }
-    };
-
-    return {
-      slide: ref(1),
-      toggled,
-      displayText,
-      id,
-      cim,
-      szin,
-      evjarat,
-      hengerurtartalom,
-      hirdetes_datum,
-      slicedText,
-      kepek,
-      handleToggle,
-    };
-  },
-  mounted() {
-    this.handleToggle(false);
-  },
-};
 </script>
 
 <template>
+    {{  }}
   <q-card bordered class="q-ma-md" flat>
     <q-card-section class="text-center text-h5" style="background-color: rgb(200, 190, 156)">
-      {{ cim }}
+      {{  }}
     </q-card-section>
     <q-card-section class="text-h7" style="background-color: rgb(255, 228, 196)">
       <ul>
         <li>
-          <span>Szin: </span><b>{{ szin }}</b>
+          <span>Szin: </span><b>{{  }}</b>
         </li>
         <li>
-          <span>Évjárat: </span><b>{{ evjarat }}</b>
+          <span>Évjárat: </span><b>{{  }}</b>
         </li>
         <li>
-          <span>Hengerűrtartalom: </span><b>{{ hengerurtartalom }} cm<sup>2</sup></b>
+          <span>Hengerűrtartalom: </span><b>{{  }} cm<sup>2</sup></b>
         </li>
         <li>
-          <span>Hirdetés dátuma: </span><b>{{ hirdetes_datum }}</b>
+          <span>Hirdetés dátuma: </span><b>{{  }}</b>
         </li>
       </ul>
     </q-card-section>
-    <q-card-section class="" style="background-color: rgb(200, 190, 156)">
+    <!-- <q-card-section class="" style="background-color: rgb(200, 190, 156)">
       <div class="text-h7 text-justify">{{ toggled ? displayText : slicedText }}</div>
       <hr />
       <q-toggle
@@ -125,7 +67,7 @@ export default {
         type="button"
         @click="$emit('editDialog')"
       ></q-btn>
-    </q-card-actions>
+    </q-card-actions> -->
   </q-card>
 </template>
 <style lang="sass" scoped></style>

@@ -21,8 +21,8 @@ export interface IApp {
 }
 
 export interface IOne {
-  id?: number;
-  categoryNameField?: string;
+  _id?: number;
+  nev?: string;
 }
 
 export interface IMany {
@@ -98,7 +98,7 @@ export const useStore = defineStore({
       Loading.show();
       this.one.documents = [];
       api
-        .get("api/categories")
+        .get("api/kategoriak")
         .then((res) => {
           Loading.hide();
           if (res?.data) {

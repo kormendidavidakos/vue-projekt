@@ -4,7 +4,7 @@
 // import { onMounted } from "vue";
 // import { date } from "quasar";
 // import router from "src/router";
-// import CardComponent from "src/components/CardComponent.vue"
+import carComponent from "../components/CarComponent.vue";
 
 // const store = useStore();
 
@@ -16,7 +16,7 @@
 
 <template>
   <q-page class="q-pa-xl">
-    <!-- <CardComponent></CardComponent> -->
+    <carComponent></carComponent>
   </q-page>
 </template>
 
